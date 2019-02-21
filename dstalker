@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 IPS=("66.249.66.246" "66.249.66.97" "66.249.64.12")
-WHITEBOTS=("googlebot.com")
+WHITEBOTS=("googlebot.com" ".crawl.baidu.com" ".crawl.baidu.jp" ".search.msn.com" ".google.com" ".googlebot.com" ".crawl.yahoo.net" ".yandex.ru" ".yandex.net" ".yandex.com")
 
 
 get_os_release() {
@@ -17,17 +17,7 @@ valid_cmd() {
 }
 
 
-install_geoip() {
-  sudo apt-get install geoip-bin >/dev/null 2>&1 ||
-  sudo yum install geoip >/dev/null 2>&1 || 
-  brew install geoip
-}
-
-
 lookup() {
-  os_release=$(get_os_release)
-  geolocate=$(install_geoip "${os_release}")
-
   for ip in "${IPS[@]}"
     do
       # IP Reverse DNS lookup
@@ -43,10 +33,6 @@ lookup() {
         echo "[OK] Identifiers correct match."
       else
         echo "[CAUTION] Something isn't cool! :S"
-      fi
-
-      if valid_cmd geoiplookup; then
-        geoiplookup ${ip}
       fi
   done
 }
