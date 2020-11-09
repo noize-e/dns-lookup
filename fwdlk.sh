@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 IPS=("66.249.66.246" "66.249.66.97" "66.249.64.12")
 WHITEBOTS=("googlebot.com" ".crawl.baidu.com" ".crawl.baidu.jp" ".search.msn.com" ".google.com" ".googlebot.com" ".crawl.yahoo.net" ".yandex.ru" ".yandex.net" ".yandex.com")
 
