@@ -1,7 +1,7 @@
-LookLook
-========
+DNS Lookup
+==========
 
-Perform to a hostname a __DNS revers lookup__ to get its `IP address`, then do a __DNS forward lockup__ to validate the although the IP as the hostname.
+Perform a hostname __DNS reversed lookup__ to get it's `IP address`, then do a __DNS forward lockup__ to validate the hostname.
 
 Promises
 --------
